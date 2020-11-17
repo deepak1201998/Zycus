@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+        
+    <!-- bean definitions here -->
+   <!--  <bean id="empDao" class="com.zycus.dao.EmployeeDAO"></bean>
+    
+    <bean id="empService" class="com.zycus.services.EmployeeService" />
+     <bean id="employee" class="com.zycus.model.Employee" /> -->
+     
+     
+     <bean id="empDao" class="com.zycus.dao.EmployeeDAO">
+     
+       <!--   <constructor-arg  value = "com.mysql.cj.jdbc.driver"/>
+          <constructor-arg  value = "somedburl"/>
+              <constructor-arg value ="dbusername"/>
+                  <constructor-arg value ="dbpassword"/>    -->
+        
+        
+         <property name="driverClass" value="dbclassname"/>
+          <property name="url"  value ="url"/>
+           <property name="username"  value="someuname"/>
+            <property name="password"  value ="somepassword" />
+     
+     </bean>
+    
+    <bean id="empService" class="com.zycus.services.EmployeeService"  autowire ="byType">
+    
+       <!--   <constructor-arg  ref= "empDao" /> -->
+        <property name="employeeDAO"  ref ="empDao"/>
+        </bean>
+</beans>
