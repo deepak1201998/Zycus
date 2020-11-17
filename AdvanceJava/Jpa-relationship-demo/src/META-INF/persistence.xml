@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.2" xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_2.xsd">
+	<persistence-unit name="Jpa-relationship-demo">
+	
+	<provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+
+		<class>com.entities.Book</class>
+		<class>com.entities.CD</class>
+		<class>com.entities.Item</class>
+		<class>com.entities.Author</class>
+
+		<properties>
+			<property
+				name="javax.persistence.schema-generation.database.action"
+				value="update" />
+
+			<property
+				name="javax.persistence.schema-generation.scripts.action"
+				value="update" />
+			<property
+				name="javax.persistence.schema-generation.scripts.create-target"
+				value="module04-create.ddl" />
+			<property
+				name="javax.persistence.schema-generation.scripts.drop-target"
+				value="module04-drop.ddl" />
+
+			<property name="javax.persistence.jdbc.driver"
+				value="com.mysql.cj.jdbc.Driver" />
+			<property name="javax.persistence.jdbc.url"
+				value="jdbc:mysql://localhost:3306/jpa_db" />
+			<property name="javax.persistence.jdbc.user" value="root" />
+			<property name="javax.persistence.jdbc.password"
+				value="abc@123" />
+
+
+			<property name="eclipselink.logging.level" value="FINE" />
+		</properties>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	</persistence-unit>
+</persistence>
